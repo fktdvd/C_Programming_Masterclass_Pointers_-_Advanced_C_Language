@@ -1,5 +1,5 @@
 /**
- * Példa a Lecture 9-hez.
+ * Példa a Lecture 10-hez.
  * 2024-06-01
  * fktdvd
  */
