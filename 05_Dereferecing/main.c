@@ -4,7 +4,7 @@
  * fktdvd
  */
 
-int main()
+void main()
 {
     int a;
     int *p;
