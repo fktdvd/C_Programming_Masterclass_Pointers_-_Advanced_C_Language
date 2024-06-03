@@ -14,3 +14,6 @@
 06_Printing_a_value_and_address/main.dSYM/Contents/Resources/Relocations/aarch64/main.yml
 /08_Exclusive_Pass_by_Reference
 09_Pointer_Arithmetic/main
+009_Pointer_Arithmetic/main
+010_Pointers_Arithmetic_exercise/main
+011_Sizeof_operator/main
