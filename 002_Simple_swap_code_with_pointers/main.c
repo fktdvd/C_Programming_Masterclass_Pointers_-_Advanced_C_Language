@@ -18,14 +18,16 @@ void swap(int *pNum1, int *pNum2)
     *pNum2 = temp;
 }
 
-void main()
+int main()
 {
     int a = 5, b = 7;
     printf("%d\n", a);
     printf("%d\n", b),
 
-        swap(&a, &b);
+    swap(&a, &b);
 
     printf("%d\n", a);
     printf("%d\n", b);
+
+    return 0;
 }
