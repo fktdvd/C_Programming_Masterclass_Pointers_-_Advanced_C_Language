@@ -9,3 +9,10 @@
 
 int main()
 {
+    int a = 10;
+    void *ptr = &a;
+    printf("%d\n", *(int*)ptr);   //explicit typecasting, meg kell adni, hogy hány byte memóriát akarunk kiolvasni
+
+    return 0;
+
+}
