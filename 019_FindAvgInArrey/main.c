@@ -20,17 +20,18 @@ int SumArrey(int *arr, int size)
 }
 
 // A function to find and return a Avg of the arrey
-int AvgArrey(int sum, int size)
+double AvgArrey(int *arr, int size)
 {
-
-    return sum / size;
+    int sum = SumArrey(arr, SIZE);
+    return (double)sum / size;
+    // return sum / size;
 }
 
 int main()
 {
 
     int grades[SIZE] = {80, 85, 72, 90};
-    int result = AvgArrey(SumArrey(grades, SIZE), SIZE);
-    printf("%d\n", result);
+    double result = AvgArrey(grades, SIZE);
+    printf("%f\n", result);
     return 0;
 }
