@@ -22,9 +22,9 @@ int FindMaxInArrey(int *arr, int size)
 
 int main()
 {
-    
+
     int grades[SIZE] = {80, 85, 72, 90};
     int result;
-    result = FindMaxInArrey(grades,SIZE);
+    result = FindMaxInArrey(grades, SIZE);
     return 0;
 }
