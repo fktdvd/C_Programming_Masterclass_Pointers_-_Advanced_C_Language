@@ -11,8 +11,8 @@
 // A function to find and return a maximum in the arrey
 int FindMaxInArrey(int *arr, int size)
 {
-    int max = 0;
-    for (int i = 0; i < SIZE; i++)
+    int max = arr[0];
+    for (int i = 1; i < SIZE; i++)
     {
         if (arr[i] > max)
             max = arr[i];
