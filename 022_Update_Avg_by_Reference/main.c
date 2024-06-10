@@ -8,10 +8,9 @@
 
 #define SIZE 4
 
-// The function should receive 2 values and update by reference the average
+// The function should receive an arrey and update by reference the average
 // Function SHOULD NOT print/return anything.
-
-void updateAverage(int *pArr, int size, double *pAvg)
+void updateAverage(int *pArr, int size, float *pAvg)
 {
     int sum = 0;
     for (int i = 0; i < SIZE; i++)
@@ -19,14 +18,15 @@ void updateAverage(int *pArr, int size, double *pAvg)
         sum += pArr[i];
     }
 
-    *pAvg = (double)sum / size;
+    *pAvg = (float)sum / size;
 }
 
 int main()
 {
     int arr[SIZE] = {80, 85, 72, 90};
-    double avg = 0;
+    float avg = 0;
     updateAverage(arr, SIZE, &avg);
-    printf("%f\n",avg);
+    printf("%f\n", avg);
     return 0;
 }
+
