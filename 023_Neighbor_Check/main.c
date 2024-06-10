@@ -21,12 +21,23 @@
 
 int neighborCheck(int *pArr, int size)
 {
-    
+    int sum = 0;
+    for (int i = 1; i < size - 1; i++)
+    {
+        if (pArr[i] == pArr[i - 1] + pArr[i + 1])
+            return 1;
+    }
+    return 0;
 }
 
 int main()
 {
-    int arr[SIZE] = {1, 4, 7, 3, 2};
+    // Return 1:
+    // int arr[SIZE] = {1, 4, 7, 3, 2};
+    // Return 0:
+    int arr[SIZE] = {1, 4, 1, 4, 2};
+
     int retVal = neighborCheck(arr, SIZE);
+
     return 0;
 }
