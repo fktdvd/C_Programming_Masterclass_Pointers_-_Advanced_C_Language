@@ -19,7 +19,7 @@ void updateAverage(int *pArr, int size, double *pAvg)
         sum += pArr[i];
     }
 
-    *pAvg = sum / size;
+    *pAvg = (double)sum / size;
 }
 
 int main()
