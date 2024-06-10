@@ -24,7 +24,7 @@ double AvgArrey(int *arr, int size)
 {
     int sum = SumArrey(arr, SIZE);
     return (double)sum / size;
-    // return sum / size;
+    // return sum / size;           // Ezt a megoldást én találtam ki, de adatvesztést okoz.
 }
 
 int main()
