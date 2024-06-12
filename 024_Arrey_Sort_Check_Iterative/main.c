@@ -20,6 +20,9 @@
 
 #define SIZE 5
 
+/**
+ * This is my solution
+ */
 int SortCheck(int *pArr, int *pVar2, int size)
 {
 
@@ -47,6 +50,22 @@ int SortCheck(int *pArr, int *pVar2, int size)
     if (eq_flag == 1)
     {
         *pVar2 = 0;
+    }
+    return 1;
+}
+
+/**
+ * This is the course solution
+ */
+int checkIsSorted(int *arr, int size, int *isReallySorted)
+{
+    *isReallySorted = 1;  // Assuming that the arry is "Really Sorted"
+    for (int i = 1; i < size; i++)
+    {
+        if (arr[i] <= arr[i-1])
+            *isReallySorted = 0;  // The Arrey is NOT "Really Sorted" 
+        if (arr[i] < arr[i-1])
+            return 0;
     }
     return 1;
 }
@@ -88,13 +107,19 @@ int main()
     int arr[SIZE] = {1, 2, 5, 7, 10};
     var1 = SortCheck(arr, &var2, SIZE);
     VarEval(&var1, &var2);
+    var1 = checkIsSorted(arr,SIZE,&var2);
+    VarEval(&var1, &var2);
     
     int arr2[SIZE] = {1, 2, 2, 5, 10};
     var1 = SortCheck(arr2, &var2, SIZE);
     VarEval(&var1, &var2);
+    var1 = checkIsSorted(arr2,SIZE,&var2);
+    VarEval(&var1, &var2);
     
     int arr3[SIZE] = {1, 2, 5, 3, 10};
     var1 = SortCheck(arr3, &var2, SIZE);
+    VarEval(&var1, &var2);
+    var1 = checkIsSorted(arr3,SIZE,&var2);
     VarEval(&var1, &var2);
 
     return 0;
