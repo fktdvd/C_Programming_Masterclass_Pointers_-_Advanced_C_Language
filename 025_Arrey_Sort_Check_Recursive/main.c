@@ -20,63 +20,18 @@
 
 #define SIZE 5
 
-int SortCheck(int *pArr, int *pVar2, int size)
+int checkIsSortedRecursive(int *arr, int size, int *isReallySorted)
 {
+    int result;    // returned result
+    if (size == 1) // The arrey has just one element
+    {
+        *isReallySorted = 1; // We will assume that the arrey is really sorted
+        return 1;
+    }
+    result = checkIsSortedRecursive(*arr, size - 1, isReallySorted);
 
-    int eq_flag = 0;
-    for (int i = 0; i < size - 1; i++)
+    if (result != 0 && arr[size - 1] == arr[size - 2]) // If the arrey is Really Sorted / Sorted AND last elements are equal
     {
-        if (pArr[i] == pArr[i + 1])
-        // Sorted
-        {
-            eq_flag = 1;
-        }
-        // Really Sorted
-        else if (pArr[i] < pArr[i + 1])
-        {
-            *pVar2 = 1;
-        }
-        else
-        // Not sorted
-        {
-            *pVar2 = 0;
-            return 0;
-        }
-    }
-
-    if (eq_flag == 1)
-    {
-        *pVar2 = 0;
-    }
-    return 1;
-}
-
-void VarEval(int *pVar1, int *pVar2)
-{
-    // Check combinations of var1 and var2 using if statements
-    if (*pVar1 == 0 && *pVar2 == 0)
-    {
-        // printf("b00\n");
-        printf("Not Sorted!\n");
-    }
-    else if (*pVar1 == 0 && *pVar2 == 1)
-    {
-        // printf("b01\n");
-        printf("Undefined combination!\n");
-    }
-    else if (*pVar1 == 1 && *pVar2 == 0)
-    {
-        // printf("b10\n");
-        printf("Sorted!\n");
-    }
-    else if (*pVar1 == 1 && *pVar2 == 1)
-    {
-        // printf("b11\n");
-        printf("Really Sorted!\n");
-    }
-    else
-    {
-        printf("Undefined combination\n");
     }
 }
 
@@ -88,11 +43,11 @@ int main()
     int arr[SIZE] = {1, 2, 5, 7, 10};
     var1 = SortCheck(arr, &var2, SIZE);
     VarEval(&var1, &var2);
-    
+
     int arr2[SIZE] = {1, 2, 2, 5, 10};
     var1 = SortCheck(arr2, &var2, SIZE);
     VarEval(&var1, &var2);
-    
+
     int arr3[SIZE] = {1, 2, 5, 3, 10};
     var1 = SortCheck(arr3, &var2, SIZE);
     VarEval(&var1, &var2);
