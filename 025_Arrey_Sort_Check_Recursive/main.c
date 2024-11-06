@@ -32,7 +32,7 @@ int checkIsSortedRecursive(int *arr, int size, int *isReallySorted)
         *isReallySorted = 1; // We will assume that the arrey is really sorted
         return 1;
     }
-    result = checkIsSortedRecursive(*arr, size - 1, isReallySorted);
+    result = checkIsSortedRecursive(arr, size - 1, isReallySorted);
 
     if (result != 0 && arr[size - 1] == arr[size - 2]) // If the arrey is Really Sorted / Sorted AND last elements are equal
     {
@@ -46,6 +46,35 @@ int checkIsSortedRecursive(int *arr, int size, int *isReallySorted)
     return result;
 }
 
+void VarEval(int *pVar1, int *pVar2)
+{
+    // Check combinations of var1 and var2 using if statements
+    if (*pVar1 == 0 && *pVar2 == 0)
+    {
+        // printf("b00\n");
+        printf("Not Sorted!\n");
+    }
+    else if (*pVar1 == 0 && *pVar2 == 1)
+    {
+        // printf("b01\n");
+        printf("Undefined combination!\n");
+    }
+    else if (*pVar1 == 1 && *pVar2 == 0)
+    {
+        // printf("b10\n");
+        printf("Sorted!\n");
+    }
+    else if (*pVar1 == 1 && *pVar2 == 1)
+    {
+        // printf("b11\n");
+        printf("Really Sorted!\n");
+    }
+    else
+    {
+        printf("Undefined combination\n");
+    }
+}
+
 int main() 
 {
     int var1 = -1;
@@ -56,11 +85,11 @@ int main()
     VarEval(&var1, &var2);
 
     int arr2[SIZE] = {1, 2, 2, 5, 10};
-    var1 = checkIsSortedRecursive(arr, SIZE, &var2);
+    var1 = checkIsSortedRecursive(arr2, SIZE, &var2);
     VarEval(&var1, &var2);
 
     int arr3[SIZE] = {1, 2, 5, 3, 10};
-    var1 = checkIsSortedRecursive(arr, SIZE, &var2);
+    var1 = checkIsSortedRecursive(arr3, SIZE, &var2);
     VarEval(&var1, &var2);
 
     return 0;
