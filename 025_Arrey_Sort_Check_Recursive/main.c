@@ -1,7 +1,7 @@
 /**
  * Példa a Lecture 41-hez.
  * 2024-06-12
- * Recursive solutioin
+ * Recursive solution
  * fktdvd
  */
 
@@ -20,6 +20,10 @@
 
 #define SIZE 5
 
+// Recursive Approach - Solution
+// Recursive Calls (with some logic behind them)
+// Base / Stop Condition
+
 int checkIsSortedRecursive(int *arr, int size, int *isReallySorted)
 {
     int result;    // returned result
@@ -32,24 +36,31 @@ int checkIsSortedRecursive(int *arr, int size, int *isReallySorted)
 
     if (result != 0 && arr[size - 1] == arr[size - 2]) // If the arrey is Really Sorted / Sorted AND last elements are equal
     {
+        *isReallySorted = 0;
     }
+    if (result != 0 && arr[size - 1] < arr[size - 2]) // If the arrey is Really Sorted / Sorted AND the element on the right is less than the element on the left
+    {
+        *isReallySorted = 0;
+        return 0;
+    }
+    return result;
 }
 
-int main()
+int main() 
 {
     int var1 = -1;
     int var2 = -1;
 
     int arr[SIZE] = {1, 2, 5, 7, 10};
-    var1 = SortCheck(arr, &var2, SIZE);
+    var1 = checkIsSortedRecursive(arr, SIZE, &var2);
     VarEval(&var1, &var2);
 
     int arr2[SIZE] = {1, 2, 2, 5, 10};
-    var1 = SortCheck(arr2, &var2, SIZE);
+    var1 = checkIsSortedRecursive(arr, SIZE, &var2);
     VarEval(&var1, &var2);
 
     int arr3[SIZE] = {1, 2, 5, 3, 10};
-    var1 = SortCheck(arr3, &var2, SIZE);
+    var1 = checkIsSortedRecursive(arr, SIZE, &var2);
     VarEval(&var1, &var2);
 
     return 0;
